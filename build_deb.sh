@@ -2,7 +2,12 @@
 set -e
 
 APP_NAME="onshape-to-orca"
-APP_VERSION="1.0.0"
+# Get the latest git tag, e.g., v1.0.1, and strip the 'v'
+APP_VERSION=$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//')
+# Fallback if no tags exist
+if [ -z "$APP_VERSION" ]; then
+    APP_VERSION="1.0.0"
+fi
 DEB_DIR="dist/${APP_NAME}_${APP_VERSION}_amd64"
 
 # Ensure you run this from the project root
