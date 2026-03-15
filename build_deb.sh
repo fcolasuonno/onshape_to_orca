@@ -41,6 +41,7 @@ Version: ${APP_VERSION}
 Section: utils
 Priority: optional
 Architecture: amd64
+Depends: libxcb-cursor0
 Maintainer: Local User <user@localhost>
 Description: Onshape to OrcaSlicer
  A GUI application to export Onshape models and open them directly in OrcaSlicer.
